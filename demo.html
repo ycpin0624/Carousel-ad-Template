@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css_file.css" rel="stylesheet" type="text/css" />
+    <title>Carousel ads</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var i = 0;
+            setInterval(show_pic, 4500);
+    
+            $('[name="1"]').click(function () {
+                $('[class="show_elements1"]').show();
+                $('[class="show_elements2"]').hide();
+                $('[class="show_elements3"]').hide();
+                $('[class="show_elements4"]').hide();
+                i = 0;
+            });
+            $('[name="2"]').click(function () {
+                $('[class="show_elements1"]').hide();
+                $('[class="show_elements2"]').show();
+                $('[class="show_elements3"]').hide();
+                $('[class="show_elements4"]').hide();
+                i = 1;
+            });
+            $('[name="3"]').click(function () {
+                $('[class="show_elements1"]').hide();
+                $('[class="show_elements2"]').hide();
+                $('[class="show_elements3"]').show();
+                $('[class="show_elements4"]').hide();
+                i = 2;
+            });
+            $('[name="4"]').click(function () {
+                $('[class="show_elements1"]').hide();
+                $('[class="show_elements2"]').hide();
+                $('[class="show_elements3"]').hide();
+                $('[class="show_elements4"]').show();
+                i = 3;
+            });
+    
+            function show_pic() {
+                if (i == 0) {
+                    $('[class="show_elements1"]').show();
+                    $('[class="show_elements2"]').hide();
+                    $('[class="show_elements3"]').hide();
+                    $('[class="show_elements4"]').hide();
+                } else if (i == 1) {
+                    $('[class="show_elements1"]').hide();
+                    $('[class="show_elements2"]').show();
+                    $('[class="show_elements3"]').hide();
+                    $('[class="show_elements4"]').hide();
+                } else if (i == 2) {
+                    $('[class="show_elements1"]').hide();
+                    $('[class="show_elements2"]').hide();
+                    $('[class="show_elements3"]').show();
+                    $('[class="show_elements4"]').hide();
+                } else if (i == 3) {
+                    $('[class="show_elements1"]').hide();
+                    $('[class="show_elements2"]').hide();
+                    $('[class="show_elements3"]').hide();
+                    $('[class="show_elements4"]').show();
+                }
+    
+                i += 1;
+                i %= 4;
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <!-- advertisement -->
+    <div class="slide_show">
+        <div class="show_elements1" style="display: block">
+            <img name="pic_1" src="image/ad_1.png" />
+        </div>
+        <div class="show_elements2" style="display: none">
+            <img name="pic_2" src="image/ad_2.png" />
+        </div>
+        <div class="show_elements3" style="display: none">
+            <img name="pic_3" src="image/ad_3.png" />
+        </div>
+        <div class="show_elements4" style="display: none">
+            <img name="pic_4" src="image/ad_4.png" />
+        </div>
+    </div>
+
+    <!-- button -->
+    <div class="show_nav">
+        <span name="1">1</span>
+        <span name="2">2</span>
+        <span name="3">3</span>
+        <span name="4">4</span>
+    </div>
+</body>
+
+</html>
